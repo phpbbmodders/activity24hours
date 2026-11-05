@@ -53,11 +53,14 @@ class listener implements EventSubscriberInterface
 	/** @var user $user */
 	protected $user;
 
-	/** @var hidebots $hidebots */
+	/** @var object|null $hidebots rmcgirr83/hidebots listener, when that extension is enabled */
 	private $hidebots;
 
-	/** @var relativedates $relativedates */
+	/** @var object|null $relativedates senky/relativedates listener, when that extension is enabled */
 	private $relativedates;
+
+	/** @var int $lookback Unix time where the look-back period starts */
+	protected $lookback;
 
 	/** @var ext_manager $ext_manager */
 	protected $ext_manager;
@@ -71,8 +74,8 @@ class listener implements EventSubscriberInterface
 		language $language,
 		template $template,
 		user $user,
-		hidebots $hidebots = null,
-		relativedates $relativedates = null,
+		object|null $hidebots,
+		object|null $relativedates,
 		ext_manager $ext_manager)
 	{
 		$this->auth = $auth;
@@ -99,7 +102,7 @@ class listener implements EventSubscriberInterface
 	* @static
 	* @access public
 	*/
-	static public function getSubscribedEvents()
+	public static function getSubscribedEvents()
 	{
 		return [
 			'core.acp_extensions_run_action_after'	=>	'acp_extensions_run_action_after',
