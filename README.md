@@ -17,6 +17,12 @@ git clone https://github.com/rmcgirr83/activity24hours.git ext/rmcgirr83/activit
 ### 2. activate
 Go to admin panel -> tab customise -> Manage extensions -> enable 24 hour activity stats
 
+## Permissions
+
+Who sees the activity block is set by the user permission **Allow to view the "24 hour activity stats" extension** (Misc tab). When installed, the extension gives it to the All Features role (the Registered users group's default), Full Moderator and Full Admin. Guests and Newly registered users don't get it; to show them the block, set it to Yes for that group.
+
+Whether guests see the usernames in phpBB's own "Who is online" list is a separate core permission: **Can view profiles, memberlist and online list**. "Can view hidden online users" only covers users who hide their online status.
+
 ## Update instructions:
 1. Go to your phpBB-Board > Admin Control Panel > Customise > Manage extensions > 24 hour activity stats: disable
 2. Delete all files of the extension from ext/rmcgirr83/activity24hours
