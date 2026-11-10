@@ -16,5 +16,5 @@ if (empty($lang) || !is_array($lang))
 }
 
 $lang = array_merge($lang, array(
-	'ACTIVITY24HOURS_NOT_ENABLEABLE' => '24 Hour Activity Stats could not be enabled. It requires phpBB 3.3.19 or later and PHP 8.3.36 or later.',
+	'ACTIVITY24HOURS_NOT_ENABLEABLE' => '24 Hour Activity Stats could not be enabled. It requires phpBB 3.3.19 or later and PHP 8.1 or later.',
 ));
